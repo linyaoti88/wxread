@@ -23,6 +23,14 @@ jobs:
     environment: AutoRead  # 指定环境
 
     steps:
+       # 👇 新增：随机延迟步骤（0~60分钟内随机）
+    - name: Random Delay
+      run: |
+        # 生成 0 到 3600 之间的随机秒数 (即 0 到 60 分钟)
+        RANDOM_DELAY=$((RANDOM % 3600))
+        echo "本次任务将在 $RANDOM_DELAY 秒（约 $((RANDOM_DELAY / 60)) 分钟）后开始执行..."
+        sleep $RANDOM_DELAY
+    # 👆 新增结束
 
     - name: Set DNS to Google's DNS
       run: |
