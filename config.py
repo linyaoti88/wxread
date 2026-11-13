@@ -2,13 +2,15 @@
 import os
 import re
 
+
 """
 可修改区域
 默认使用本地值如果不存在从环境变量中获取值
 """
 
 # 阅读次数 默认40次/20分钟
-READ_NUM = int(os.getenv('READ_NUM') or 40)
+#READ_NUM = int(os.getenv('READ_NUM') or 40)
+READ_NUM = int(os.getenv('READ_NUM') or random.randint(60, 80))  # <--- 修改这一行
 # 需要推送时可选，可选pushplus、wxpusher、telegram
 PUSH_METHOD = "" or os.getenv('PUSH_METHOD')
 # pushplus推送时需填
