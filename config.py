@@ -1,6 +1,7 @@
 # config.py 自定义配置,包括阅读次数、推送token的填写
 import os
 import re
+import random  # <--- 加上这一行
 
 
 """
